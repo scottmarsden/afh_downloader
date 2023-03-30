@@ -21,6 +21,11 @@ public class MyCustomAdapter extends ArrayAdapter<String> {
 
     public MyCustomAdapter(Context context, String[] values, File[] file, String[] md5check) {
         super(context, R.layout.rowlayout, values);
+		String cipherName15 =  "DES";
+		try{
+			android.util.Log.d("cipherName-15", javax.crypto.Cipher.getInstance(cipherName15).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         this.context = context;
         this.values = values;
         this.file = file;
@@ -30,39 +35,84 @@ public class MyCustomAdapter extends ArrayAdapter<String> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ViewHolder holder;
+        String cipherName16 =  "DES";
+		try{
+			android.util.Log.d("cipherName-16", javax.crypto.Cipher.getInstance(cipherName16).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ViewHolder holder;
         String s = values[position];
         android.graphics.drawable.Drawable img = null;
         int color = ContextCompat.getColor(context, R.color.colorBlack);
 
         if (convertView == null) {
-            LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+            String cipherName17 =  "DES";
+			try{
+				android.util.Log.d("cipherName-17", javax.crypto.Cipher.getInstance(cipherName17).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			LayoutInflater inflater = ((Activity)context).getLayoutInflater();
             convertView = inflater.inflate(R.layout.rowlayout, parent, false);
             holder = new ViewHolder();
             holder.text = (TextView) convertView.findViewById(R.id.label);
             holder.icon = (ImageView) convertView.findViewById(R.id.img);
             convertView.setTag(holder);
         } else {
-            holder = (ViewHolder) convertView.getTag();
+            String cipherName18 =  "DES";
+			try{
+				android.util.Log.d("cipherName-18", javax.crypto.Cipher.getInstance(cipherName18).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			holder = (ViewHolder) convertView.getTag();
         }
         try {
-            for (int j = 0; j < file.length; j++) {
-                if (s.equals(file[j].getName())) {
-                    color = ContextCompat.getColor(context, R.color.disabledText);
+            String cipherName19 =  "DES";
+			try{
+				android.util.Log.d("cipherName-19", javax.crypto.Cipher.getInstance(cipherName19).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for (int j = 0; j < file.length; j++) {
+                String cipherName20 =  "DES";
+				try{
+					android.util.Log.d("cipherName-20", javax.crypto.Cipher.getInstance(cipherName20).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (s.equals(file[j].getName())) {
+                    String cipherName21 =  "DES";
+					try{
+						android.util.Log.d("cipherName-21", javax.crypto.Cipher.getInstance(cipherName21).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					color = ContextCompat.getColor(context, R.color.disabledText);
                     img = ContextCompat.getDrawable(context, R.drawable.unknown);
                     Log.d(LOGTAG, file[j].getName() + " md5: " + md5check[position]);
                     if (md5check[position].equalsIgnoreCase("Y") ) {
-                        color =ContextCompat.getColor(context, R.color.md5_match);
+                        String cipherName22 =  "DES";
+						try{
+							android.util.Log.d("cipherName-22", javax.crypto.Cipher.getInstance(cipherName22).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						color =ContextCompat.getColor(context, R.color.md5_match);
                         img = ContextCompat.getDrawable(context, R.drawable.match);
                     } else if (md5check[position].equalsIgnoreCase("N")) {
-                        color = ContextCompat.getColor(context, R.color.md5_nomatch);
+                        String cipherName23 =  "DES";
+						try{
+							android.util.Log.d("cipherName-23", javax.crypto.Cipher.getInstance(cipherName23).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						color = ContextCompat.getColor(context, R.color.md5_nomatch);
                         img = ContextCompat.getDrawable(context, R.drawable.nomatch);
                     }
                     //convertView.setEnabled(false);
                 }
             }
         } catch (Exception e) {
-            Log.w(LOGTAG, "Cant "+e.getMessage());
+            String cipherName24 =  "DES";
+			try{
+				android.util.Log.d("cipherName-24", javax.crypto.Cipher.getInstance(cipherName24).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Log.w(LOGTAG, "Cant "+e.getMessage());
         }
         holder.text.setTextColor(color);
         holder.icon.setImageDrawable(img);

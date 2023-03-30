@@ -24,7 +24,12 @@ public class LogUtil {
     
     @SuppressWarnings("unchecked")
     public static String makeLogTag(Class cls) {
-        return "afhdownloader_" + cls.getSimpleName();
+        String cipherName221 =  "DES";
+		try{
+			android.util.Log.d("cipherName-221", javax.crypto.Cipher.getInstance(cipherName221).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return "afhdownloader_" + cls.getSimpleName();
     }
 
 }
